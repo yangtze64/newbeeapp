@@ -9,4 +9,19 @@ export default class Task extends React.Component {
       </View>
     );
   }
+
+  componentDidMount() {
+    this._navListener = this.props.navigation.addListener(
+      'willFocus',
+      this._setStatusBar,
+    );
+  }
+
+  _setStatusBar() {
+    StatusBar.setBackgroundColor('#FFD948');
+  }
+
+  componentWillUnmount() {
+    this._navListener.remove();
+  }
 }

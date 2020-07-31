@@ -6,7 +6,7 @@ import {themeColor, statusBarStyle} from '@/app.json';
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar backgroundColor={themeColor} barStyle={statusBarStyle} />
+      <StatusBar backgroundColor="#FFD948" barStyle="dark-content" />
       <SafeAreaView style={styles.safeArea}>
         <Routers />
       </SafeAreaView>

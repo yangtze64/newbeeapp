@@ -3,7 +3,6 @@ import React from 'react';
 import {StyleSheet, Image} from 'react-native';
 import {Router, Scene, Stack, Actions} from 'react-native-router-flux';
 import TabBottomBar from '@/components/TabBottomBar';
-import {themeColor, statusBarStyle} from '@/app.json';
 //tabbar
 import Task from '@/pages/Task';
 import Practice from '@/pages/Practice';
@@ -20,7 +19,7 @@ const taskSelectedIcon = require('@/assets/images/taskSelectedIcon.png');
 const mineIcon = require('@/assets/images/mineIcon.png');
 const mineSelectedIcon = require('@/assets/images/mineSelectedIcon.png');
 const Scenes = Actions.create(
-  <Scene key="root">
+  <Scene key="root" headerLayoutPreset="center" navigationBarStyle={{backgroundColor: '#FFD948'}} titleStyle={{fontSize: 17}}>
     <Scene
       key="tabBar"
       tabs
@@ -29,16 +28,14 @@ const Scenes = Actions.create(
       hideNavBar
       initial
       tabBarPosition="bottom"
-      headerLayoutPreset="center"
-      navigationBarStyle={{backgroundColor: themeColor}}
-      titleStyle={{fontSize: 17}}
       labelStyle={{color: '#333333', fontSize: 10}}
       //component={TabBottomBar}
     >
       <Scene
         key="practice"
         component={Practice}
-        title="Practice"
+        title="远程项目实习"
+        tabBarLabel="实习"
         tabBarIcon={(props) => {
           return props.focused ? (
             <Image
@@ -49,11 +46,13 @@ const Scenes = Actions.create(
             <Image source={practiceIcon} style={{width: 15.5, height: 18.5}} />
           );
         }}
+        navigationBarStyle={{backgroundColor: '#ffffff'}}
       />
       <Scene
         key="task"
         component={Task}
-        title="Task"
+        title="任务大厅"
+        tabBarLabel="任务"
         tabBarIcon={(props) => {
           return props.focused ? (
             <Image
@@ -68,7 +67,8 @@ const Scenes = Actions.create(
       <Scene
         key="mine"
         component={Mine}
-        title="Mine"
+        title="我的"
+        tabBarLabel="我的"
         tabBarIcon={(props) => {
           return props.focused ? (
             <Image
