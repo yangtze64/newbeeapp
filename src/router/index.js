@@ -2,6 +2,7 @@
 import React from 'react';
 import {StyleSheet, Image} from 'react-native';
 import {Router, Scene, Stack, Actions} from 'react-native-router-flux';
+import {pxToDp} from '@/utils/dimension';
 import TabBottomBar from '@/components/TabBottomBar';
 //tabbar
 import Task from '@/pages/Task';
@@ -19,7 +20,11 @@ const taskSelectedIcon = require('@/assets/images/taskSelectedIcon.png');
 const mineIcon = require('@/assets/images/mineIcon.png');
 const mineSelectedIcon = require('@/assets/images/mineSelectedIcon.png');
 const Scenes = Actions.create(
-  <Scene key="root" headerLayoutPreset="center" navigationBarStyle={{backgroundColor: '#FFD948'}} titleStyle={{fontSize: 17}}>
+  <Scene
+    key="root"
+    headerLayoutPreset="center"
+    navigationBarStyle={{backgroundColor: '#FFD948'}}
+    titleStyle={{fontSize: pxToDp(34)}}>
     <Scene
       key="tabBar"
       tabs
@@ -28,7 +33,7 @@ const Scenes = Actions.create(
       hideNavBar
       initial
       tabBarPosition="bottom"
-      labelStyle={{color: '#333333', fontSize: 10}}
+      labelStyle={{color: '#333333', fontSize: pxToDp(20)}}
       //component={TabBottomBar}
     >
       <Scene
@@ -40,10 +45,13 @@ const Scenes = Actions.create(
           return props.focused ? (
             <Image
               source={practiceSelectedIcon}
-              style={{width: 17.9, height: 20.4}}
+              style={{width: pxToDp(35.8), height: pxToDp(40.8)}}
             />
           ) : (
-            <Image source={practiceIcon} style={{width: 15.5, height: 18.5}} />
+            <Image
+              source={practiceIcon}
+              style={{width: pxToDp(33.8), height: pxToDp(39.9)}}
+            />
           );
         }}
         navigationBarStyle={{backgroundColor: '#ffffff'}}
@@ -57,10 +65,13 @@ const Scenes = Actions.create(
           return props.focused ? (
             <Image
               source={taskSelectedIcon}
-              style={{width: 22, height: 18.5}}
+              style={{width: pxToDp(44), height: pxToDp(37)}}
             />
           ) : (
-            <Image source={taskIcon} style={{width: 20.5, height: 18.5}} />
+            <Image
+              source={taskIcon}
+              style={{width: pxToDp(41), height: pxToDp(37)}}
+            />
           );
         }}
       />
@@ -73,10 +84,13 @@ const Scenes = Actions.create(
           return props.focused ? (
             <Image
               source={mineSelectedIcon}
-              style={{width: 20, height: 18.5}}
+              style={{width: pxToDp(40), height: pxToDp(37)}}
             />
           ) : (
-            <Image source={mineIcon} style={{width: 18.5, height: 18.5}} />
+            <Image
+              source={mineIcon}
+              style={{width: pxToDp(37), height: pxToDp(37)}}
+            />
           );
         }}
       />

@@ -1,7 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View, Text, StatusBar} from 'react-native';
 import Routers from '@/router';
-import {themeColor, statusBarStyle} from '@/app.json';
 
 const App: () => React$Node = () => {
   return (

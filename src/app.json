@@ -1,4 +1,8 @@
 {
   "name": "newbeeapp",
-  "displayName": "新蜜蜂远程实习"
+  "displayName": "新蜜蜂远程实习",
+  "apiDomain": "https://beeapi.hulianpai.com/",
+  "appid": "f674e60124ea89a88d08cdcd06e53e4b",
+  "signKey": "yquUXvD@Dl0QNCtXN7Uk63jZ0Ite!&oN",
+  "apiVersion": "v1.0"
 }
